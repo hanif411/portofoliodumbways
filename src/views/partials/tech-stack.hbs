@@ -1,0 +1,26 @@
+<section id="tech-stack" class="py-16 md:py-24">
+  <h2
+    class="text-3xl font-bold tracking-tight text-gray-900 text-center lg:text-left"
+  >
+    Tech Stack - Tools I Use Everyday
+  </h2>
+
+  <div
+    class="mt-12 grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 gap-y-12 gap-x-6 justify-items-center"
+  >
+    {{#each tools}}
+      <div class="flex flex-col items-center space-y-2 text-center group">
+        <div
+          class="w-16 h-16 p-3 rounded-2xl bg-white border border-gray-100/70"
+        >
+          <img
+            src="../public/tools/{{this}}.png"
+            alt="JavaScript"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <span class="text-sm font-medium text-gray-600">{{this}}</span>
+      </div>
+    {{/each}}
+  </div>
+</section>

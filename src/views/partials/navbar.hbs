@@ -1,0 +1,89 @@
+<header class="sticky top-0 z-50 bg-white">
+    
+  <nav
+    aria-label="Global"
+    class="max-w-[1280px] mx-auto px-6 lg:px-8 h-16 flex items-center justify-between"
+  >
+    <div class="flex">
+      {{#if user}}
+        <form action="/logout" method="post">
+          <button type="submit">
+            <i class="fa-solid fa-right-to-bracket mt-2 mx-2"></i>
+          </button>
+        </form>
+      {{/if}}
+      {{#unless user}}
+        <a href="/login">
+          <i class="fa-solid fa-user mt-2 mx-2"></i>
+        </a>
+      {{/unless}}
+      <p class="text-xl font-bold">
+        HS
+      </p>
+    </div>
+
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        command="show-modal"
+        commandfor="mobile-menu"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          data-slot="icon"
+          aria-hidden="true"
+          class="size-6"
+        >
+          <path
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex items-center space-x-6">
+
+      <div class="flex items-center space-x-6 mr-4 text-sm font-medium">
+        <a
+          href="#tech-stack"
+          class="text-gray-400 hover:text-gray-900 transition-colors"
+        >Tech Stack</a>
+        <a
+          href="#experience"
+          class="text-gray-400 hover:text-gray-900 transition-colors"
+        >Experience</a>
+        <a
+          href="#projects"
+          class="text-gray-400 hover:text-gray-900 transition-colors"
+        >Projects</a>
+      </div>
+
+      <a
+        href="https://www.linkedin.com/in/hanif-sholihin-319301246"
+        target="_blank"
+        class="h-9 px-4 py-2 rounded-lg bg-green-500 text-sm font-semibold text-white shadow-sm hover:bg-green-600 transition-colors"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+        Let's Talk
+      </a>
+      <a
+        href="/download-cv"
+        class="h-9 px-4 py-2 rounded-lg bg-gray-900 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 transition-colors"
+      >
+        <i class="fa-solid fa-file-arrow-down"></i>
+        Download CV
+      </a>
+
+    </div>
+  </nav>
+
+ {{>navbar-mobile}}
+
+</header>

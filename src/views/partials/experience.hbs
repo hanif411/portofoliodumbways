@@ -1,0 +1,80 @@
+<section id="experience" class="py-16 md:py-24">
+  <h2
+    class="text-3xl font-bold text-gray-900 mb-12 text-center lg:text-left"
+  >{{#if user}}
+      <a href="/works"><i class="fa-solid fa-plus"></i></a>{{/if}}
+    Work Experiences:
+  </h2>
+
+  <div class="space-y-10">
+
+    {{#each workExperiences}}
+      <div
+        class="bg-white p-6 md:p-8 rounded-xl border border-gray-100/70 flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0"
+      >
+        <div class="flex flex-col gap-4 w-full md:w-2/3 lg:flex-row">
+          <div
+            class="w-20 h-20 flex-shrink-0 p-2 rounded-full border border-gray-200 bg-white"
+          >
+            <img
+              src="../public/works/{{this.image_url}}"
+              alt="{{this.company_name}} Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">
+              {{this.job_title}}
+            </h3>
+            <p class="text-sm text-green-600 font-medium">
+              {{this.company_name}}
+            </p>
+            <ul class="mt-3 list-disc ml-5 text-sm text-gray-700 space-y-1">
+              {{#each this.description}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {{#each this.technologies}}
+                <span
+                  class="text-xs font-medium bg-gray-100 text-gray-600 px-3 py-1 rounded-full"
+                >{{this}}</span>
+              {{/each}}
+            </div>
+            {{#if @root.user}}
+              <div class="mt-4 flex justify-end space-x-3">
+                <button
+                  type="button"
+                  command="show-modal"
+                  commandfor="deleteWorkModal-{{this.id}}"
+                  class="text-sm font-medium text-red-600 hover:text-red-700 transition-colors flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                  Delete
+                </button>
+
+                <button
+                  type="button"
+                  command="show-modal"
+                  commandfor="editWorkModal-{{this.id}}"
+                  class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  Edit
+                </button>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+        <div
+          class="text-sm font-medium text-gray-500 md:text-right w-full md:w-1/3 flex justify-start md:justify-end"
+        >
+          {{this.start_date}}
+          -
+          {{this.end_date}}
+        </div>
+      </div>
+    {{>experience-modal}}
+    {{/each}}
+  </div>
+</section>

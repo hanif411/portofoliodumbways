@@ -1,0 +1,27 @@
+{
+  "name": "final-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config index.js",
+    "dev": "nodemon -r dotenv/config index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "express-session": "^1.18.2",
+    "hbs": "^4.2.0",
+    "method-override": "^3.0.0",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "pg": "^8.16.3"
+  }
+}
