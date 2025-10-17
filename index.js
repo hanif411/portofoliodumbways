@@ -26,7 +26,7 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "src", "views"));
 
 app.use(express.urlencoded({ extended: false }));
-app.use("/public", express.static("src/public"));
+app.use("/public",express.static(path.join(__dirname, "src", "public")));
 app.use(methodOverride("_method"));
 app.use(
   session({
