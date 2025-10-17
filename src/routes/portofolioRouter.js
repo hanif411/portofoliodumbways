@@ -9,7 +9,7 @@ portofolioRouter.get("/", portofolio);
 portofolioRouter.get("/login", login);
 portofolioRouter.post("/login", handleLogin);
 portofolioRouter.post("/logout", logOut);
-portofolioRouter.get("/register", register)
-portofolioRouter.post("/register", handleRegister)
+// portofolioRouter.get("/register", register)
+// portofolioRouter.post("/register", handleRegister)
 
 export default portofolioRouter;

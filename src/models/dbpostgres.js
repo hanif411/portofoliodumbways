@@ -2,17 +2,12 @@ import pg from "pg";
 
 const { Pool } = pg;
 
-const config = {
-    connectionString: process.env.DATABASE_URL, 
-};
-
-if (process.env.DATABASE_URL) {
-    config.ssl = {
-        rejectUnauthorized: false
-    };
-}
-
-const pool = new Pool(config);
+const pool = new Pool({
+  user: "postgres",
+  host: "localhost",
+  port: 5432,
+  database: "portofolio",
+});
 
 pool.query("SELECT NOW()", (err, result) => {
   if (err) {

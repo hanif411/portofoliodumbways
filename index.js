@@ -6,26 +6,21 @@ import pool from "./src/models/dbpostgres.js";
 import session from "express-session";
 import workRouter from "./src/routes/workExperience.js";
 import projectRouter from "./src/routes/projects.js";
-import { configDotenv } from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
 const port = 3000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const hbs = create({
   extname: ".hbs",
   defaultLayout: false,
-  partialsDir: path.join(__dirname, "src", "views", "partials"),
+  partialsDir: "src/views/partials",
 });
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "src", "views"));
+app.set("views", "src/views");
 
 app.use(express.urlencoded({ extended: false }));
-app.use("/public",express.static(path.join(__dirname, "src", "public")));
+app.use("/public", express.static("src/public"));
 app.use(methodOverride("_method"));
 app.use(
   session({
