@@ -10,7 +10,6 @@ import { configDotenv } from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 
-configDotenv();
 const app = express();
 const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
